@@ -5,6 +5,7 @@ import SignIn from './pages/SignIn';
 import IndexBuilder from './pages/IndexBuilder';
 import Research from './pages/Research';
 import WhaleTracker from './pages/WhaleTracker';
+import Keys from './pages/Keys';
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <Route path="/indexbuilder" element={<IndexBuilder />} />
         <Route path="/research" element={<Research />} />
         <Route path="/whaletracker" element={<WhaleTracker />} />
+        <Route path="/keys" element={<Keys />} />
       </Routes>
     </Router>
   )
