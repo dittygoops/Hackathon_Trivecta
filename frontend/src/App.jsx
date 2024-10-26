@@ -14,6 +14,7 @@ import Keys from './pages/Keys';
 import './App.css';
 
 export const AuthContext = createContext(null);
+export const KeyContext = createContext(null);
 
 const App = () => {
   const [user, setUser] = useState(null); // Initially null (no auth status known)
@@ -52,44 +53,46 @@ const App = () => {
 
   return (
     <AuthContext.Provider value={[user, setUser]}>
-      <Router>
-        <Routes>
-          <Route 
-            path="/"
-            element={user ? (
-              key ? <Home /> : <Navigate to="/keys" replace />
-            ) : <Navigate to="/signin" replace />}
-          />
-          <Route
-            path="/signin"
-            element={user ? <Navigate to="/" replace /> : <SignIn />}
-          />
-          <Route
-            path="/indexbuilder"
-            element={user ? (
-              key ? <IndexBuilder /> : <Navigate to="/keys" replace />
-            ) : <Navigate to="/signin" replace />} 
-          />
-          <Route
-            path="/research"
-            element={user ? (
-              key ? <Research /> : <Navigate to="/keys" replace />
-            ) : <Navigate to="/signin" replace />}
-          />
-          <Route
-            path="/whaletracker"
-            element={user ? (
-              key ? <WhaleTracker /> : <Navigate to="/keys" replace />
-            ) : <Navigate to="/signin" replace />}
-          />
-          <Route
-            path="/keys"
-            element={user ? (
-              key ? <Navigate to="/" replace /> :  <Keys />
-            ) : <Navigate to="/signin" replace />}
-          />
-        </Routes>
-      </Router>
+      <KeyContext.Provider value={[key, setKey]}>
+        <Router>
+          <Routes>
+            <Route 
+              path="/"
+              element={user ? (
+                key ? <Home /> : <Navigate to="/keys" replace />
+              ) : <Navigate to="/signin" replace />}
+            />
+            <Route
+              path="/signin"
+              element={user ? <Navigate to="/" replace /> : <SignIn />}
+            />
+            <Route
+              path="/indexbuilder"
+              element={user ? (
+                key ? <IndexBuilder /> : <Navigate to="/keys" replace />
+              ) : <Navigate to="/signin" replace />} 
+            />
+            <Route
+              path="/research"
+              element={user ? (
+                key ? <Research /> : <Navigate to="/keys" replace />
+              ) : <Navigate to="/signin" replace />}
+            />
+            <Route
+              path="/whaletracker"
+              element={user ? (
+                key ? <WhaleTracker /> : <Navigate to="/keys" replace />
+              ) : <Navigate to="/signin" replace />}
+            />
+            <Route
+              path="/keys"
+              element={user ? (
+                key ? <Navigate to="/" replace /> :  <Keys />
+              ) : <Navigate to="/signin" replace />}
+            />
+          </Routes>
+        </Router>
+      </KeyContext.Provider>
     </AuthContext.Provider>
   );
 };
