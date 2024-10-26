@@ -69,3 +69,9 @@
 .key-form button:hover {
     background-color: #FFA000; /* Darker hover blue */
 }
+
+.key-form button:disabled {
+    cursor: default;
+    background-color: #8B5B29; /* Darker active blue */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}

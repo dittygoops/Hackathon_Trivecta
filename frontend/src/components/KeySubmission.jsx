@@ -31,7 +31,7 @@ const KeySubmission = () => {
                         value={key}
                         onChange={(e) => setKey(e.target.value)}
                     />
-                    <button type="submit">Submit</button>
+                    <button type="submit" disabled={key.length == 0}>Submit</button>
                 </form>
              </div>
         </div> 
