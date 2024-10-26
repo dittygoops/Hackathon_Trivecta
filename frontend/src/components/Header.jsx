@@ -33,7 +33,7 @@ const Header = () => {
     if (isAuth) {
         return (
             <div className='header-container'>
-                <div className='site-name' onClick={() => handleHeaderClick(0)}>WebTest</div>
+                <div className='site-name' onClick={() => handleHeaderClick(0)}>Trivecta</div>
                 <div className='header-tags'>
                     <div className='tag-name' onClick={() => handleHeaderClick(1)}>IndexBuilder</div>
                     <div className='tag-name' onClick={() => handleHeaderClick(2)}>WhaleTracker</div>
@@ -46,7 +46,7 @@ const Header = () => {
 
     return (
         <div className='header-container'>
-            <div className='site-name'>WebTest</div>
+            <div className='site-name'>Trivecta</div>
             <SignInButton />
         </div>
     );
