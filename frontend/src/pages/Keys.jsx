@@ -1,10 +1,15 @@
 import Header from "../components/Header";
+import KeySubmission from "../components/KeySubmission";
+
+import './Page.css';
 
 const Keys = () => {
     return (
-      <div>
+      <div className="page">
         <Header />
-        <h1>Keys</h1>
+        <div className="page-content">
+          <KeySubmission />
+        </div>
       </div>
     );
   }
