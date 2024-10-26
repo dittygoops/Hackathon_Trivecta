@@ -1,0 +1,18 @@
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #9eeaff 0%, #1eb8ff 100%);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.site-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #343a40;
+    text-transform: uppercase; 
+    letter-spacing: 0.05rem;
+    margin: 0;
+    padding: 0;
+}
