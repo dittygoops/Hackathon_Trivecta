@@ -1,12 +1,10 @@
 import vals.dcf as dcf
 import yfinance as yf
+import vals.risk as risk
 
 class Values:
-    def __init__(self, DCF, PEG, PE, AL_ratio):
-        self.DCF = DCF
-        self.PEG = PEG
-        self.PE = PE
-        self.AL_ratio = AL_ratio
+    def __init__(self, ticker):
+        self.ticker = ticker
 
     def getValuation(self, ticker):
         try:
@@ -33,11 +31,12 @@ class Values:
         return perGrowth
     
     def getRiskScore(self, ticker):
-        # Placeholder logic for risk score
-        return 1  # replace with actual risk score calculation logic
+        risk_score = risk.calculate_risk_score(ticker)
+        return risk_score
     
-    def valuation_vals(self, ticker):
-        RevenueGrowth = self.getValuation(ticker)
-        #RiskVal = self.getRiskScore(ticker)
-        #return RevenueGrowth, RiskVal
-        return RevenueGrowth
+    # def valuation_vals(self, ticker):
+        
+    #     RevenueGrowth = self.getValuation(ticker)
+    #     RiskVal = self.getRiskScore(ticker)
+
+    #     return RevenueGrowth, RiskVal

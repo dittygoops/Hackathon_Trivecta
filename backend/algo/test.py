@@ -1,10 +1,12 @@
-import backend.algo.fin_val as fin_val
+import fin_val
 
-ticker = "BABA"
+ticker = "NVDA"
 
 if __name__ == "__main__":
     # Create an instance of the Values class
-    values_instance = fin_val.Values(DCF=0, PEG=0, PE=0, AL_ratio=0)  # Replace with actual values if needed
+    values_instance = fin_val.Values(ticker)  # Replace with actual values if needed
     # Call the getValuation method
     valuation = round(values_instance.getValuation(ticker=ticker),2)
     print(valuation)
+    risk_val = values_instance.getRiskScore(ticker=ticker)
+    print(risk_val)
