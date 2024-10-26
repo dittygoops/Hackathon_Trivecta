@@ -6,17 +6,13 @@ def calculate_risk_score(ticker):
     pe_score = get_PE_ratio_score(ticker)
     vol_score = get_volatility_score(ticker)
     strength_score = get_overall_strength_score(ticker)
+    coeff_variation_ = coeff_variation(ticker)
+    print(coeff_variation_)
 
     # Weighted total score
-    total_score = (
-        0.3 * al_score +
-        0.2 * pe_score +
-        0.3 * vol_score +
-        0.2 * strength_score
-    )
-
-    # Convert score to risk: higher total score -> lower risk
-    risk_score = 100 - total_score  # Inverting the score to represent risk from 1 (low) to 100 (high)
+    risk_score = (
+        coeff_variation_
+    )    
 
     return round(risk_score, 2)
 
@@ -27,7 +23,7 @@ def get_AL_ratio_score(ticker):
         total_assets = balance_sheet.loc["Total Assets"].iloc[0]  # Use .iloc for positional indexing
         total_liabilities = balance_sheet.loc["Total Liabilities Net Minority Interest"].iloc[0]  # Use .iloc for positional indexing
         al_ratio = total_assets / total_liabilities if total_liabilities else 0
-        
+
         # Score AL ratio: higher ratio is lower risk
         score = min(100, max(0, (al_ratio - 1) * 20))
         return score
@@ -69,3 +65,26 @@ def get_overall_strength_score(ticker):
         print(f"Error calculating overall strength score: {e}")
         return 50
 
+def coeff_variation(ticker):
+    # Pull the last 5 years of price data
+    try:
+        ticker_data = yf.Ticker(ticker)
+        hist = ticker_data.history(period="5y")  # Get 5 years of historical data
+        # Calculate daily returns
+        hist['Returns'] = hist['Close'].pct_change().dropna()
+        
+        # Calculate the average return
+        average_return = hist['Returns'].mean()
+        
+        # Calculate the standard deviation of returns
+        std_dev = hist['Returns'].std()
+        
+        # Calculate the coefficient of variation
+        if average_return != 0:  # Prevent division by zero
+            cv = std_dev / average_return
+            return round(cv, 4)  # Round for better readability
+        else:
+            return None  # Return None if average return is zero
+    except Exception as e:
+        print(f"Error calculating coefficient of variation for {ticker}: {e}")
+        return None
