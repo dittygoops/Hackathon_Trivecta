@@ -6,13 +6,11 @@ def calculate_risk_score(ticker):
     pe_score = get_PE_ratio_score(ticker)
     vol_score = get_volatility_score(ticker)
     strength_score = get_overall_strength_score(ticker)
-    coeff_variation_ = coeff_variation(ticker)
+    coeff_variation_ = coeff_variation(ticker)/3.5
     print(coeff_variation_)
 
     # Weighted total score
-    risk_score = (
-        coeff_variation_
-    )    
+    risk_score = (coeff_variation_+al_score)    
 
     return round(risk_score, 2)
 
@@ -29,7 +27,7 @@ def get_AL_ratio_score(ticker):
         return score
     except Exception as e:
         print(f"Error calculating AL ratio score: {e}")
-        return 50  # Average score if data is unavailable
+        return 35  # Average score if data is unavailable
 
 def get_PE_ratio_score(ticker):
     ticker = yf.Ticker(ticker)
