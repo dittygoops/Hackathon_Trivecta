@@ -34,7 +34,6 @@ const App = () => {
         
         if (userDoc.exists()) {
           setKey(userDoc.data().alpacaKey); // Set the key variable if it exists
-          console.log(userDoc.data().alpacaKey);
         } else {
           setKey(null); // Set key to null if no entry exists
         }
