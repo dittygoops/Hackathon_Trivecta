@@ -6,21 +6,18 @@ import { AuthContext } from "../App";
 import "./Authbuttons.css";
 
 const SignInButton = () => {
-    const [isAuth, setIsAuth] = useContext(AuthContext);
+    const [user, setUser] = useContext(AuthContext);
 
     const signInWithGoogle = async () => {
         try {
-            await signInWithPopup(auth, googleProvider);
-            setIsAuth(true);
+            const result = await signInWithPopup(auth, googleProvider);
         } catch (error) {
             console.error(error);
         }
     };
 
     return (
-        <div>
-            <button className="signin-button" onClick={signInWithGoogle}>Continue with Google</button>
-        </div>
+        <button className="signin-button" onClick={signInWithGoogle}>Continue with Google</button>
     );
 }
 

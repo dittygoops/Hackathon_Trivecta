@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { createContext, useState, useEffect } from 'react';
 import { auth } from './firebaseConfig'; // Import your Firebase auth instance
 import { onAuthStateChanged } from 'firebase/auth'; // Firebase auth listener
+import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore"; // Firestore imports
 
 import Home from './pages/Home';
 import SignIn from './pages/SignIn';
@@ -15,12 +16,31 @@ import './App.css';
 export const AuthContext = createContext(null);
 
 const App = () => {
-  const [isAuth, setIsAuth] = useState(null); // Initially null (no auth status known)
+  const [user, setUser] = useState(null); // Initially null (no auth status known)
+  const [key, setKey] = useState(null);
   const [loading, setLoading] = useState(true); // Loading state for initial auth check
 
+  const db = getFirestore(); // Initialize Firestore
+
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      setIsAuth(user); // Update the auth state based on the user's authentication status
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
+      setUser(user); // Update the auth state based on the user's authentication status
+
+      if (user) {
+        // Fetch the key data for the authenticated user
+        const userRef = doc(db, "users", user.uid);
+        const userDoc = await getDoc(userRef);
+        
+        if (userDoc.exists()) {
+          setKey(userDoc.data().alpacaKey); // Set the key variable if it exists
+          console.log(userDoc.data().alpacaKey);
+        } else {
+          setKey(null); // Set key to null if no entry exists
+        }
+      } else {
+        setKey(null); // Clear the key if no user is authenticated
+      }
+
       setLoading(false); // Stop loading once auth status is set
     });
 
@@ -31,33 +51,42 @@ const App = () => {
   if (loading) return <div>Loading...</div>; // Render loading while checking auth status
 
   return (
-    <AuthContext.Provider value={[isAuth, setIsAuth]}>
+    <AuthContext.Provider value={[user, setUser]}>
       <Router>
         <Routes>
           <Route 
             path="/"
-            element={isAuth ? <Home /> : <Navigate to="/signin" replace />}
-            exact
+            element={user ? (
+              key ? <Home /> : <Navigate to="/keys" replace />
+            ) : <Navigate to="/signin" replace />}
           />
           <Route
             path="/signin"
-            element={isAuth ? <Navigate to="/" replace /> : <SignIn />}
+            element={user ? <Navigate to="/" replace /> : <SignIn />}
           />
           <Route
             path="/indexbuilder"
-            element={isAuth ? <IndexBuilder /> : <Navigate to="/signin" replace />} 
+            element={user ? (
+              key ? <IndexBuilder /> : <Navigate to="/keys" replace />
+            ) : <Navigate to="/signin" replace />} 
           />
           <Route
             path="/research"
-            element={isAuth ? <Research /> : <Navigate to="/signin" replace />} 
+            element={user ? (
+              key ? <Research /> : <Navigate to="/keys" replace />
+            ) : <Navigate to="/signin" replace />}
           />
           <Route
             path="/whaletracker"
-            element={isAuth ? <WhaleTracker /> : <Navigate to="/signin" replace />} 
+            element={user ? (
+              key ? <WhaleTracker /> : <Navigate to="/keys" replace />
+            ) : <Navigate to="/signin" replace />}
           />
           <Route
             path="/keys"
-            element={isAuth ? <Keys /> : <Navigate to="/signin" replace />} 
+            element={user ? (
+              key ? <Navigate to="/" replace /> :  <Keys />
+            ) : <Navigate to="/signin" replace />}
           />
         </Routes>
       </Router>

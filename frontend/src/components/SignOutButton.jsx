@@ -6,21 +6,19 @@ import { AuthContext } from "../App";
 import "./Authbuttons.css";
 
 const SignOutButton = () => {
-    const [isAuth, setIsAuth] = useContext(AuthContext);
+    const [user, setUser] = useContext(AuthContext);
 
     const handleSignOut = async () => {
         try {
             await signOut(auth);
-            setIsAuth(false);
+            setUser(false)
         } catch (error) {
             console.error(error);
         }
     };
 
     return (
-        <div>
-            <button className="signout-button" onClick={handleSignOut}>Sign out</button>
-        </div>
+        <button className="signout-button" onClick={handleSignOut}>Sign out</button>
     );
 }
 

@@ -1,4 +1,5 @@
 .signin-button, .signout-button {
+    margin-left: auto   ;
     background-color: #00C2CB; /* Google Blue */
     color: white;
     border: none;
