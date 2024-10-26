@@ -1,6 +1,5 @@
 .header-container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
     background: linear-gradient(135deg, #333333 0%, #111111 100%); /* Dark gradient */
@@ -17,7 +16,12 @@
     cursor: pointer;
 }
 
-.header-name {
+.header-tags {
+    display: flex;
+    align-items: center;
+}
+
+.tag-name {
     font-size: 1rem;
     color: #e0e0e0; /* Light text color */
     margin: 0 1rem;
@@ -25,6 +29,6 @@
     transition: color 0.3s ease;
 }
 
-.header-name:hover {
+.tag-name:hover {
     color: #FFC107; /* Light blue on hover */
 }

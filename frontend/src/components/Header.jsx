@@ -34,9 +34,11 @@ const Header = () => {
         return (
             <div className='header-container'>
                 <div className='site-name' onClick={() => handleHeaderClick(0)}>WebTest</div>
-                <div className='header-name' onClick={() => handleHeaderClick(1)}>IndexBuilder</div>
-                <div className='header-name' onClick={() => handleHeaderClick(2)}>WhaleTracker</div>
-                <div className='header-name' onClick={() => handleHeaderClick(3)}>Research</div>
+                <div className='header-tags'>
+                    <div className='tag-name' onClick={() => handleHeaderClick(1)}>IndexBuilder</div>
+                    <div className='tag-name' onClick={() => handleHeaderClick(2)}>WhaleTracker</div>
+                    <div className='tag-name' onClick={() => handleHeaderClick(3)}>Research</div>
+                </div>
                 <SignOutButton />
             </div>
         );
