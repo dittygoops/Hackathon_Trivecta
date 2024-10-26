@@ -1,0 +1,77 @@
+/* KeySubmission.css */
+
+.key-form-container {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text color */
+}
+
+.key-form-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #e0e0e0; /* Light text color */
+}
+
+.key-form-description {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #b0b0b0; /* Slightly lighter text color */
+    text-align: center;
+}
+
+.key-form {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #1f1f1f; /* Darker box background */
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.key-form form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.key-form input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #333;
+    border-radius: 4px;
+    background-color: #2c2c2c; /* Dark input background */
+    color: #e0e0e0; /* Light text color */
+    text-align: center;
+}
+
+.key-form button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #FFC107; /* Darker blue button */
+    color: black;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.key-form button:hover {
+    background-color: #FFA000; /* Darker hover blue */
+}
+
+.key-form button:disabled {
+    cursor: default;
+    background-color: #8B5B29; /* Darker active blue */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
