@@ -1,5 +1,5 @@
 .signin-button, .signout-button {
-    background-color: #4285F4; /* Google Blue */
+    background-color: #00C2CB; /* Google Blue */
     color: white;
     border: none;
     padding: 10px 20px;
@@ -9,10 +9,6 @@
     transition: background-color 0.3s ease;
 }
 
-.signin-button:hover, .signout-button:hover {
-    background-color: #357ae8; /* Darker Google Blue */
-}
-
-.signin-button:active, .signout-button:active {
-    background-color: #2a65c7; /* Even Darker Google Blue */
+.signin-button:hover, .signout-button:hover, .signin-button:active, .signout-button:active {
+    background-color: #1DB9C3; /* Darker Google Blue */
 }

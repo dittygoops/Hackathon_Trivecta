@@ -3,16 +3,28 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    background: linear-gradient(135deg, #9eeaff 0%, #1eb8ff 100%);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #333333 0%, #111111 100%); /* Dark gradient */
 }
 
 .site-name {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #343a40;
+    color: #e0e0e0; /* Light text color */
     text-transform: uppercase; 
     letter-spacing: 0.05rem;
     margin: 0;
     padding: 0;
+    cursor: pointer;
+}
+
+.header-name {
+    font-size: 1rem;
+    color: #e0e0e0; /* Light text color */
+    margin: 0 1rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.header-name:hover {
+    color: #FFC107; /* Light blue on hover */
 }

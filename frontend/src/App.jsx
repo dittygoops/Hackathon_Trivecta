@@ -10,6 +10,8 @@ import Research from './pages/Research';
 import WhaleTracker from './pages/WhaleTracker';
 import Keys from './pages/Keys';
 
+import './App.css';
+
 export const AuthContext = createContext(null);
 
 const App = () => {
