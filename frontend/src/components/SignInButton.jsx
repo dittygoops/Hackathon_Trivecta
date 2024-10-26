@@ -3,6 +3,8 @@ import { signInWithPopup } from "firebase/auth";
 import { auth, googleProvider } from "../firebaseConfig";
 import { AuthContext } from "../App";
 
+import "./Authbuttons.css";
+
 const SignInButton = () => {
     const [isAuth, setIsAuth] = useContext(AuthContext);
 
