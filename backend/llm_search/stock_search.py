@@ -64,8 +64,8 @@ class StockDataProcessor:
                     "role": "user",
                     "content": (
                         f"Please provide a list of the top 20 {topic} related "
-                        "stocks currently being actively traded in the US market. "
-                        "Format each entry as follows: [ticker] - description. "
+                        "stocks that are found on the US market. "
+                        "Format each entry as follows: [ticker] - description about the stock. "
                         "Only return the ticker and description without any extra "
                         "text or explanation."
                     )
@@ -127,10 +127,6 @@ class StockDataProcessor:
             logger.error(f"Error in query_stock_data: {e}")
             raise
 
-def get_topic_input() -> str:
-    """Get topic input from user if not provided as command line argument."""
-    return input("Enter the market sector/topic (e.g., technology, healthcare, energy): ").strip()
-
 def query(query):
     """Main function with error handling and topic input."""
     try:
@@ -141,3 +137,7 @@ def query(query):
     except Exception as e:
         logger.error(f"Main function error: {e}")
         raise
+
+# if __name__=="__main__":
+#     result = query("semiconductor")
+#     print(result)
