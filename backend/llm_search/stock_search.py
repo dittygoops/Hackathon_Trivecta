@@ -1,8 +1,9 @@
+from typing import Dict, List
 from openai import OpenAI
 import os
 from dotenv import load_dotenv
 from algo import fin_val
-
+import re
 
 def get_llm_response(input):
     """Get stock recommendations from LLM"""
@@ -21,7 +22,7 @@ def get_llm_response(input):
         },
         {
             "role": "user",
-            "content": "Top 20 companies related to oil within the US stock market and are being actively traded"
+            "content": "Please provide a list of the top 20 technology stocks currently being actively traded in the US market. Format each entry as follows: [ticker] - description. Only return the ticker and description without any extra text or explanation."
         }
     ]
     
@@ -33,51 +34,29 @@ def get_llm_response(input):
     
     return response.choices[0].message.content
 
-def extract_stock_info(text: str) -> List[Dict[str, str]]:
-    stocks = []
-    lines = text.split('\n')
-    
-    for line in lines:
-        if not line.strip() or '**' not in line:
-            continue
-            
-        try:
-            ticker_start = line.find('**') + 2
-            ticker_end = line.find('**', ticker_start)
-            ticker = line[ticker_start:ticker_end].strip()
+def parse_stock_list(text):
+    # Regular expression to match the stock entries in the format [ticker] - description
+    pattern = r"\*\*([A-Z]+)\*\*\s+-\s+(.+)"
+    matches = re.findall(pattern, text)
 
-            desc_parts = line.split('-', 1)
-            if len(desc_parts) > 1:
-                description = desc_parts[1].strip()
-            else:
-                description = ""
-                
-            stocks.append({
-                "ticker": ticker,
-                "description": description
-            })
-            
-        except Exception as e:
-            print(f"Error processing line: {line}")
-            print(f"Error: {str(e)}")
-            continue
-    
+    # Creating a list of dictionaries to store ticker and description pairs
+    stocks = [{"ticker": match[0], "description": match[1]} for match in matches]
+
     return stocks
-
 def main():
     # Get response from LLM
     llm_output = get_llm_response("oil")
-    print(llm_output)
+    # print(llm_output)
 
-    # # Extract tickers
-    # tickers = extract_tickers(llm_output)
+    # Extract tickers
+    tickers = parse_stock_list(llm_output)
     # print(tickers)
     
-    # # Example of looping over tickers
+    # Example of looping over tickers
     # for ticker in tickers:
     #     print(f"Processing ticker: {ticker}")
     #     # Add your ticker processing logic here
-    #     values_instance = fin_val.Values(ticker)  # Replace with actual values if needed
+    #     values_instance = fin_val.Values(ticker[ticker['ticker']])  # Replace with actual values if needed
     #     # Call the getValuation method
     #     try:
     #         valuation = round(values_instance.getValuation(ticker=ticker),2)
@@ -86,6 +65,7 @@ def main():
     #         print(risk_val)
     #     except Exception as e:
     #         print(f"Error processing ticker {ticker}: {e}")
+    
 
         
 if __name__ == "__main__":
