@@ -1,0 +1,116 @@
+[
+    {
+        "ticker": "GIS",
+        "description": "General Mills, a packaged food giant with brands like Pillsbury, Cheerios, H\u00e4agen-Dazs, and more.",
+        "growth_potential": 77.17,
+        "risk_score": -9.85
+    },
+    {
+        "ticker": "TSN",
+        "description": "Tyson Foods, a major meat processing company with products including beef, pork, and chicken.",
+        "growth_potential": 426.77,
+        "risk_score": 144.83
+    },
+    {
+        "ticker": "MDLZ",
+        "description": "Mondelez International, known for snack brands like Cadbury, Oreo, and Chips Ahoy!",
+        "growth_potential": 155.79,
+        "risk_score": -1.54
+    },
+    {
+        "ticker": "PEP",
+        "description": "PepsiCo, a company with a large portfolio of leading beverage and food brands including Pepsi, Lay\u2019s, and Doritos",
+        "growth_potential": 129.84,
+        "risk_score": 0.21
+    },
+    {
+        "ticker": "CPB",
+        "description": "Campbell Soup Company, manufacturer and marketer of food and beverage products, including soups and snacks",
+        "growth_potential": 154.68,
+        "risk_score": 4.12
+    },
+    {
+        "ticker": "CAG",
+        "description": "ConAgra Foods, a consumer packaged goods food company with brands like Healthy Choice and Marie Callender's",
+        "growth_potential": 109.57,
+        "risk_score": 5.29
+    },
+    {
+        "ticker": "HRL",
+        "description": "Hormel Foods Corporation, developer and distributor of various meat, nuts, and other food products",
+        "growth_potential": 70.17,
+        "risk_score": 894.3
+    },
+    {
+        "ticker": "KHC",
+        "description": "Kraft Heinz, a food company with brands like Kraft, Heinz, and Oscar Mayer",
+        "growth_potential": 77.59,
+        "risk_score": 5.25
+    },
+    {
+        "ticker": "NSRGY",
+        "description": "Nestle SA ADR, a global food and beverage company with brands like Nescafe, KitKat, and Gerber",
+        "growth_potential": 77.11,
+        "risk_score": 21.36
+    },
+    {
+        "ticker": "BYND",
+        "description": "Beyond Meat, a pure-play plant-based food company offering products built around pea protein",
+        "growth_potential": -3.39,
+        "risk_score": 53.38
+    },
+    {
+        "ticker": "QSR",
+        "description": "Restaurant Brands International, parent company of brands like Popeyes, Burger King, and Tim Hortons",
+        "growth_potential": 109.55,
+        "risk_score": 12.76
+    },
+    {
+        "ticker": "CMG",
+        "description": "Chipotle Mexican Grill, a quick-serve restaurant chain known for its Mexican food",
+        "growth_potential": 40.76,
+        "risk_score": 5.95
+    },
+    {
+        "ticker": "WING",
+        "description": "Wingstop, a chain of restaurants specializing in chicken wings and sauces",
+        "growth_potential": 32.85,
+        "risk_score": 31.15
+    },
+    {
+        "ticker": "CAVA",
+        "description": "Cava Group, owner and operator of Mediterranean tapas restaurants",
+        "growth_potential": 17.45,
+        "risk_score": NaN
+    },
+    {
+        "ticker": "SHAK",
+        "description": "Shake Shack Inc., a modern day \u201croadside\u201d burger stand serving high-quality burgers",
+        "growth_potential": 180.26,
+        "risk_score": 18.82
+    },
+    {
+        "ticker": "K",
+        "description": "Kellogg Company, a food manufacturing company with brands like Kellogg's cereals and Pringles",
+        "growth_potential": 99.65,
+        "risk_score": -6.53
+    },
+    {
+        "ticker": "SYY",
+        "description": "Sysco Corporation, a distributor of food and related products to the foodservice and retail industries[Not explicitly listed but relevant]",
+        "growth_potential": 468.52,
+        "risk_score": 7.14
+    },
+    {
+        "ticker": "INGR",
+        "description": "Ingredion Incorporated, a global ingredient solutions company[Not explicitly listed but relevant]",
+        "growth_potential": 245.41,
+        "risk_score": 3.92
+    },
+    {
+        "ticker": "IBOT",
+        "description": "Ibotta, Inc., a company providing cash back on everyday purchases through its mobile app",
+        "growth_potential": 170,
+        "risk_score": NaN
+    }
+]

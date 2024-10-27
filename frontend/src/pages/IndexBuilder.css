@@ -16,9 +16,34 @@
 .left-side {
     height: 100%;
     flex: .5;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .right-side {
     height: 100%;
     flex: .5;
+}
+
+.build-etf-button {
+    width: 50%;
+    margin: 25px 0;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #FFC107; /* Darker blue button */
+    color: black;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.build-etf-button:hover {
+    background-color: #FFA000; /* Darker hover blue */
+}
+
+.invisible {
+    display: none;
 }

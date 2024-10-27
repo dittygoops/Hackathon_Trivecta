@@ -1,0 +1,170 @@
+[
+    {
+        "ticker": "UHS",
+        "description": "Universal Health Services, Inc.",
+        "growth_potential": 567.39,
+        "risk_score": 5.68
+    },
+    {
+        "ticker": "DVA",
+        "description": "DaVita Inc.",
+        "growth_potential": 132.94,
+        "risk_score": 0.11
+    },
+    {
+        "ticker": "ISRG",
+        "description": "Intuitive Surgical Inc.",
+        "growth_potential": 6.0,
+        "risk_score": 39.83
+    },
+    {
+        "ticker": "LLY",
+        "description": "Eli Lilly & Co.",
+        "growth_potential": 8.1,
+        "risk_score": 2.05
+    },
+    {
+        "ticker": "HCA",
+        "description": "HCA Healthcare Inc.",
+        "growth_potential": 164.95,
+        "risk_score": -4.49
+    },
+    {
+        "ticker": "RMD",
+        "description": "Resmed Inc.",
+        "growth_potential": 58.77,
+        "risk_score": 26.32
+    },
+    {
+        "ticker": "BSX",
+        "description": "Boston Scientific Corp.",
+        "growth_potential": 41.13,
+        "risk_score": 7.22
+    },
+    {
+        "ticker": "PODD",
+        "description": "Insulet Corporation",
+        "growth_potential": 91.74,
+        "risk_score": 15.53
+    },
+    {
+        "ticker": "COO",
+        "description": "Cooper Companies, Inc..",
+        "growth_potential": 71.67,
+        "risk_score": 16.7
+    },
+    {
+        "ticker": "BAYRY",
+        "description": "Bayer, German healthcare and agriculture conglomerate.",
+        "growth_potential": 546.98,
+        "risk_score": 1.55
+    },
+    {
+        "ticker": "RPRX",
+        "description": "Royalty Pharma, biotechnology firm with high-quality investment portfolio.",
+        "growth_potential": 170,
+        "risk_score": 16.18
+    },
+    {
+        "ticker": "BAX",
+        "description": "Baxter International, medical equipment and services company.",
+        "growth_potential": 294.28,
+        "risk_score": 11.69
+    },
+    {
+        "ticker": "FMS",
+        "description": "Fresenius Medical Care, largest dialysis company.",
+        "growth_potential": 303.29,
+        "risk_score": 81.89
+    },
+    {
+        "ticker": "ILMN",
+        "description": "Illumina, genetic sequencing technology company.",
+        "growth_potential": 31.23,
+        "risk_score": 50.46
+    },
+    {
+        "ticker": "ZBH",
+        "description": "Zimmer Biomet Holdings, medical device company.",
+        "growth_potential": 115.61,
+        "risk_score": 271.88
+    },
+    {
+        "ticker": "CVS",
+        "description": "CVS Health, pharmacy and health care services company.",
+        "growth_potential": 17.73,
+        "risk_score": 19.76
+    },
+    {
+        "ticker": "AMN",
+        "description": "AMN Healthcare Services, health care staffing and workforce solutions.",
+        "growth_potential": 389.02,
+        "risk_score": 65.55
+    },
+    {
+        "ticker": "BIIB",
+        "description": "Biogen, biotechnology company focusing on neurological diseases.",
+        "growth_potential": 58.82,
+        "risk_score": 874.55
+    },
+    {
+        "ticker": "IONS",
+        "description": "Ionis Pharmaceuticals, biotechnology company developing RNA-targeted therapeutics.",
+        "growth_potential": 43.16,
+        "risk_score": 100.78
+    },
+    {
+        "ticker": "TIL",
+        "description": "Instil Bio Inc., clinical-stage biotechnology company.",
+        "growth_potential": 170,
+        "risk_score": 30.62
+    },
+    {
+        "ticker": "SMMT",
+        "description": "Summit Therapeutics Inc., biopharmaceutical company.",
+        "growth_potential": 170,
+        "risk_score": 4.55
+    },
+    {
+        "ticker": "TVTX",
+        "description": "Travere Therapeutics Inc., biopharmaceutical company.",
+        "growth_potential": 43.4,
+        "risk_score": 17.54
+    },
+    {
+        "ticker": "IGMS",
+        "description": "IGM Biosciences Inc., biotechnology company.",
+        "growth_potential": 170,
+        "risk_score": 25.57
+    },
+    {
+        "ticker": "JNJ",
+        "description": "Johnson & Johnson, diversified health care company.",
+        "growth_potential": 62.73,
+        "risk_score": 1.29
+    },
+    {
+        "ticker": "MRK",
+        "description": "Merck & Company, pharmaceutical company.",
+        "growth_potential": 114.75,
+        "risk_score": -3.5
+    },
+    {
+        "ticker": "NVS",
+        "description": "Novartis, pharmaceutical company.",
+        "growth_potential": 56.05,
+        "risk_score": 3.4
+    },
+    {
+        "ticker": "PFE",
+        "description": "Pfizer, pharmaceutical company.",
+        "growth_potential": 12.11,
+        "risk_score": 23.08
+    },
+    {
+        "ticker": "UNH",
+        "description": "UnitedHealth Group, health insurance and services company.",
+        "growth_potential": 284.06,
+        "risk_score": -7.72
+    }
+]
