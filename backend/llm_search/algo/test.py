@@ -1,3 +1,4 @@
+# import fin_val
 import fin_val
 
 ticker = "NVDA"
