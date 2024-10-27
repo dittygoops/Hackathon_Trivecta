@@ -44,9 +44,9 @@ def parse_stock_list(text):
     stocks = [{"ticker": match[0], "description": match[1]} for match in matches]
 
     return stocks
-def main():
+def query(query_from_user):
     # Get response from LLM
-    llm_output = get_llm_response("oil")
+    llm_output = get_llm_response(query_from_user)
     stock_json_array = []
 
     # Extract tickers
