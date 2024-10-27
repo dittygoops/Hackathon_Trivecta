@@ -33,7 +33,7 @@ const App = () => {
         const userDoc = await getDoc(userRef);
         
         if (userDoc.exists()) {
-          setKey(userDoc.data().alpacaKey); // Set the key variable if it exists
+          setKey([userDoc.data().alpacaKey, userDoc.data().alpacaSecret]); // Set the key variable if it exists
         } else {
           setKey(null); // Set key to null if no entry exists
         }
