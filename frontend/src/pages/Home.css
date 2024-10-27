@@ -56,17 +56,25 @@ h3 {
 }
 
 h4 {
-    color: #FFC107; /* Ensure the heading is white */
+    color: #ffffff; /* Ensure the heading is white */
     text-align: left; /* Center the heading */
     font-size: 1.75em; /* Increase the font size */
     
 }
 
 h5 {
-    padding: 20px;
-    color: #FFC107; /* Ensure the heading is white */
+    padding: 100px;
+    color: #ffffff;; /* Ensure the heading is white */
     text-align: center; /* Center the heading */
     font-size: 1.75em; /* Increase the font size */
+    
+}
+
+h6 {
+    padding: 20px;
+    color: #ffffff;; /* Ensure the heading is white */
+    text-align: center; /* Center the heading */
+    font-size: 1.5em; /* Increase the font size */
     
 }
 /* Profit box styling */
@@ -147,4 +155,116 @@ a:hover {
     display: flex;
     width: 100%;
     height: 500px;
+}
+
+.market{
+    border: 2px solid lightgray;
+    padding: 30px;
+}
+
+.article-box {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    max-width: 200px;
+    text-align: center;
+    margin: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.article-box:hover {
+    transform: scale(1.05);
+}
+
+.article-image {
+    width: 100%;
+    border-radius: 4px;
+}
+
+.article-title {
+    font-size: 16px;
+    margin: 12px 0;
+    font-weight: bold;
+}
+
+.article-link {
+    color: #1e90ff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.article-link:hover {
+    text-decoration: underline;
+}
+
+.articles-container {
+    display: flex;
+    gap: 110px;
+    flex-wrap: wrap;
+}
+
+.button-container {
+    display: flex;            /* Use Flexbox */
+    justify-content: center;  /* Center horizontally */
+    margin-top: 50px;       /* Optional: add some space above the button */
+}
+
+.learn-more-button {
+    padding: 10px 20px;     /* Add padding for better appearance */
+    font-size: 24px;        /* Adjust font size */
+    cursor: pointer;        /* Change cursor on hover */
+    background-color: #007bff; /* Button background color */
+    color: white;           /* Button text color */
+    border: none;           /* Remove default border */
+    border-radius: 5px;     /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.learn-more-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+.learning-pathway {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.modules-container {
+    display: flex;                      /* Use flexbox for layout */
+    flex-wrap: wrap;                   /* Allow wrapping of items */
+    justify-content: space-around;      /* Evenly space out the modules */
+    margin: 20px 20;                    /* Space above and below */
+}
+
+.module-box {
+    background-color: black;           /* Black background for each module */
+    border: 2px solid gold;            /* Gold border for modules */
+    padding: 15px;                     /* Inner padding */
+    margin: 10px;                      /* Space around each module */
+    text-align: center;                /* Center the text */
+    width: calc(30% - 20px);          /* Width of module, accounting for margins */
+}
+
+.module-image {
+    width: 100%;                       /* Responsive image */
+    height: auto;                      /* Maintain aspect ratio */
+}
+
+.module-title {
+    color: white;                      /* White font for titles */
+    margin: 10px 0;                  /* Margin around titles */
+    text-align: center;
+}
+
+.module-link {
+    color: gold;                       /* Gold color for links */
+    text-decoration: none;             /* Remove underline */
+}
+
+.module-link:hover {
+    text-decoration: underline;        /* Underline on hover */
 }
