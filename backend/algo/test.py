@@ -1,6 +1,6 @@
 import fin_val
 
-ticker = "NVDA"
+ticker = "AAPL"
 
 if __name__ == "__main__":
     # Create an instance of the Values class

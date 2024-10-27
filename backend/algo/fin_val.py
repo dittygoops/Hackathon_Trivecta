@@ -34,9 +34,9 @@ class Values:
         risk_score = risk.calculate_risk_score(ticker)
         return risk_score
     
-    # def valuation_vals(self, ticker):
+    def valuation_vals(self, ticker):
         
-    #     RevenueGrowth = self.getValuation(ticker)
-    #     RiskVal = self.getRiskScore(ticker)
+        RevenueGrowth = self.getValuation(ticker)
+        RiskVal = self.getRiskScore(ticker)
 
-    #     return RevenueGrowth, RiskVal
+        return RevenueGrowth, RiskVal
