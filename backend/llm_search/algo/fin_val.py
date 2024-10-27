@@ -1,6 +1,6 @@
-import vals.dcf as dcf
+from .vals import dcf
 import yfinance as yf
-import vals.risk as risk
+from .vals import risk
 
 class Values:
     def __init__(self, ticker):
@@ -24,10 +24,9 @@ class Values:
              perGrowth = perGrowth/1.65
 
 
-        if perGrowth < 6.5 and perGrowth > 0:
+        if perGrowth < 10 and perGrowth > 0:
             perGrowth = perGrowth * 85
 
-        
 
         return perGrowth
     
@@ -35,9 +34,9 @@ class Values:
         risk_score = risk.calculate_risk_score(ticker)
         return risk_score
     
-    # def valuation_vals(self, ticker):
+    def valuation_vals(self, ticker):
         
-    #     RevenueGrowth = self.getValuation(ticker)
-    #     RiskVal = self.getRiskScore(ticker)
+        RevenueGrowth = self.getValuation(ticker)
+        RiskVal = self.getRiskScore(ticker)
 
-    #     return RevenueGrowth, RiskVal
+        return RevenueGrowth, RiskVal

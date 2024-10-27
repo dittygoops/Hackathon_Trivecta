@@ -7,6 +7,6 @@ if __name__ == "__main__":
     values_instance = fin_val.Values(ticker)  # Replace with actual values if needed
     # Call the getValuation method
     valuation = round(values_instance.getValuation(ticker=ticker),2)
-    print('Rev Val: ' + str(valuation))
+    print(valuation)
     risk_val = values_instance.getRiskScore(ticker=ticker)
-    print('Risk Score: ' + str(risk_val))
+    print(risk_val)
