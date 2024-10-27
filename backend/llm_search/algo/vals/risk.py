@@ -3,32 +3,34 @@ import numpy as np
 import pandas as pd
 
 def calculate_risk_score(ticker):
-    al_score = round(get_AL_ratio_score(ticker),2)
-    if al_score == 0:
-        al_score += 27.5
-    
-    
-    rsi = 0
-    rsi = calculate_rsi(ticker, 14)
-    
-    if(rsi > 75):
-        rsi = 5.5
-    elif(rsi<45):
-        rsi = -5.5
-    else:
+        
+        al_score = round(get_AL_ratio_score(ticker),2)
+        if al_score == 0:
+            al_score += 27.5
+        
+        
         rsi = 0
-    coeff_variation_ = coeff_variation(ticker)/3.5
-    beta = round(((calculate_beta(ticker))-1)*12.5)
-    # print('coeff: '+str(coeff_variation_))
-    # print('al ratio: '+str(al_score))
-    # print('beta: '+str(beta))
-    # print('rsi:' + str(rsi))
- 
+        rsi = calculate_rsi(ticker, 14)
+        
+        if(rsi > 75):
+            rsi = 5.5
+        elif(rsi<45):
+            rsi = -5.5
+        else:
+            rsi = 0
+        coeff_variation_ = coeff_variation(ticker)/3.5
+        beta = round(((calculate_beta(ticker))-1)*12.5)
+        # print('coeff: '+str(coeff_variation_))
+        # print('al ratio: '+str(al_score))
+        # print('beta: '+str(beta))
+        # print('rsi:' + str(rsi))
+    
 
-    # Weighted total score
-    risk_score = (coeff_variation_+al_score+beta+rsi)    
+        # Weighted total score
+        risk_score = (coeff_variation_+al_score+beta+rsi)    
 
-    return round(risk_score, 2)
+        return abs(round(risk_score, 2))
+    
 
 def get_AL_ratio_score(ticker):
     ticker = yf.Ticker(ticker)
