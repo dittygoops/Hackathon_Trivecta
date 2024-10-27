@@ -83,7 +83,4 @@ def query(query_from_user):
     stock_json_array_str = json.dumps(stock_json_array, indent=4)
 
     # Print or return the JSON array
-    print(stock_json_array_str)
-        
-if __name__ == "__main__":
-    main()
+    return stock_json_array_str
