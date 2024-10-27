@@ -2,7 +2,7 @@ from typing import Dict, List
 from openai import OpenAI
 import os
 from dotenv import load_dotenv
-from algo import fin_val
+from .algo import fin_val
 import re
 import json
 
