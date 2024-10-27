@@ -106,7 +106,7 @@ def submit_query():
         return jsonify({
             "error": "Money must be a positive number"
         }), 400
-    alpaca.port_buy(api_key, api_secret, tickers, money)
+    return alpaca.port_buy(api_key, api_secret, tickers, money)
 
 @app.route('/query-llm', methods=['POST'])
 def query_llm():
