@@ -23,7 +23,6 @@ class Values:
              perGrowth = ((ImpliedVal - current_price*3)/current_price)/10
              perGrowth = perGrowth/1.65
 
-
         if perGrowth < 10 and perGrowth > 0:
             perGrowth = perGrowth * 85
 
