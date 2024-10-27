@@ -25,9 +25,13 @@
 .right-side {
     height: 100%;
     flex: .5;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.build-etf-button {
+.build-etf-button, .invest-button {
     width: 50%;
     margin: 25px 0;
     padding: 0.5rem 1rem;
@@ -40,8 +44,35 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 
-.build-etf-button:hover {
+.build-etf-button:hover, .invest-button:hover {
     background-color: #FFA000; /* Darker hover blue */
+}
+
+.invest-button {
+    width: 50%;
+}
+
+/* IndexBuilder.css */
+
+.investment-amount {
+    background-color: #2c2c2c; /* Dark background */
+    color: #e0e0e0; /* Light text color */
+    border: 1px solid #444; /* Dark border */
+    border-radius: 4px; /* Rounded corners */
+    padding: 10px; /* Padding inside the input */
+    font-size: 16px; /* Font size */
+    width: 50%; /* Full width */
+    box-sizing: border-box; /* Include padding and border in width calculation */
+    transition: border-color 0.3s ease; /* Smooth transition for border color */
+}
+
+.investment-amount::placeholder {
+    color: #888888; /* Light gray placeholder text */
+}
+
+.investment-amount:focus {
+    border-color: #1a73e8; /* Blue border on focus */
+    outline: none; /* Remove default outline */
 }
 
 .invisible {

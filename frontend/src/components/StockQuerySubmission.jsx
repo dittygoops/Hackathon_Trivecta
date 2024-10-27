@@ -2,12 +2,13 @@ import { useState } from 'react';
 
 import './StockQuerySubmission.css';
 
-const StockQuerySubmission = ({handleStocksUpdate}) => {
+const StockQuerySubmission = ({reset, handleStocksUpdate}) => {
     const [queryInput, setQueryInput] = useState('');
     const [waitingForResponse, setWaitingForResponse] = useState(false);
     
     const handleSubmit = async (e) => {
         setWaitingForResponse(true);
+        reset();
         e.preventDefault();
         try {
             const response = await fetch('http://localhost:5000/search', {
@@ -23,6 +24,7 @@ const StockQuerySubmission = ({handleStocksUpdate}) => {
             }
 
             const data = await response.json();
+            console.log(data)
             handleStocksUpdate(data);
         } catch (error) {
             console.error("Error fetching data:", error);
@@ -40,7 +42,7 @@ const StockQuerySubmission = ({handleStocksUpdate}) => {
                         value={queryInput}
                         onChange={(e) => setQueryInput(e.target.value)}
                     />
-                    <button type="submit" disabled={queryInput.length == 0 || waitingForResponse}>Submit</button>
+                    <button type="submit" disabled={queryInput.length == 0 || waitingForResponse}>{waitingForResponse ? "Loading" : "Submit"}</button>
                 </form>
              </div>
         </div> 
