@@ -114,14 +114,28 @@ def DCF_Implied_Value(ticker, forecast_years, discount_rate, perpetual_growth_ra
     
     enterprise_value = sum(discounted_fcfs) + discounted_terminal_value
 
+    # Use .get() to avoid KeyError and ensure a default value
     balance_sheet = stock.balance_sheet
-    total_debt = balance_sheet.get('Total Debt', 0)
-    cash = balance_sheet.get('Cash', 0)
-    net_debt = total_debt - cash if total_debt and cash else 0
+    total_debt = balance_sheet.get('Total Debt', 0)  # Default to 0 if not present
+    cash = balance_sheet.get('Cash', 0)  # Default to 0 if not present
+    
+    print(f"Total Debt: {total_debt}, Cash: {cash}")
+
+    # Make sure both total_debt and cash are numbers
+    if total_debt is None or cash is None:
+        print("Total Debt or Cash is None, returning None.")
+        return None
+
+    net_debt = total_debt - cash  # This line might be causing the error
 
     equity_value = enterprise_value - net_debt
-    shares_outstanding = stock.info.get('sharesOutstanding', 0)
-    implied_stock_price = equity_value / shares_outstanding if shares_outstanding else None
+    shares_outstanding = stock.info.get('sharesOutstanding', 0)  # Default to 0 if not present
+
+    if shares_outstanding == 0:
+        print("Shares outstanding is zero, cannot calculate implied stock price.")
+        return None
+
+    implied_stock_price = equity_value / shares_outstanding
 
     # print("Discounted Cash Flow (DCF) Analysis")
     # print(f"Implied Stock Price: ${implied_stock_price:.2f}")
