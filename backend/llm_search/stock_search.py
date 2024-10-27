@@ -4,6 +4,7 @@ import os
 from dotenv import load_dotenv
 from algo import fin_val
 import re
+import json
 
 def get_llm_response(input):
     """Get stock recommendations from LLM"""
@@ -22,7 +23,7 @@ def get_llm_response(input):
         },
         {
             "role": "user",
-            "content": "Please provide a list of the top 20 technology stocks currently being actively traded in the US market. Format each entry as follows: [ticker] - description. Only return the ticker and description without any extra text or explanation."
+            "content": "Please provide a list of the top 20 technology related stocks currently being actively traded in the US market. Format each entry as follows: [ticker] - description. Only return the ticker and description without any extra text or explanation."
         }
     ]
     
@@ -46,27 +47,43 @@ def parse_stock_list(text):
 def main():
     # Get response from LLM
     llm_output = get_llm_response("oil")
-    # print(llm_output)
+    stock_json_array = []
 
     # Extract tickers
-    tickers = parse_stock_list(llm_output)
-    # print(tickers)
-    
-    # Example of looping over tickers
-    # for ticker in tickers:
-    #     print(f"Processing ticker: {ticker}")
-    #     # Add your ticker processing logic here
-    #     values_instance = fin_val.Values(ticker[ticker['ticker']])  # Replace with actual values if needed
-    #     # Call the getValuation method
-    #     try:
-    #         valuation = round(values_instance.getValuation(ticker=ticker),2)
-    #         print(valuation)
-    #         risk_val = values_instance.getRiskScore(ticker=ticker)
-    #         print(risk_val)
-    #     except Exception as e:
-    #         print(f"Error processing ticker {ticker}: {e}")
-    
+    stock_data = parse_stock_list(llm_output)
+    tickers = [stock['ticker'] for stock in stock_data]
 
+    # Extract description values
+    descriptions = [stock['description'] for stock in stock_data]
+
+    for ticker, description in zip(tickers, descriptions):
+        print(f"Processing {ticker}: {description}")
+    
+        # Initialize the financial values instance
+        values_instance = fin_val.Values(ticker)
+        
+        # Get the valuation, round it to two decimal places
+        valuation = round(values_instance.getValuation(ticker=ticker), 2)
+        
+        # Get the risk score
+        risk_val = values_instance.getRiskScore(ticker=ticker)
+        
+        # Create a JSON object with ticker, description, valuation, and risk score
+        stock_json_object = {
+            "ticker": ticker,
+            "description": description,
+            "growth_potential": valuation,
+            "risk_score": risk_val
+        }
+    
+        # Append the JSON object to the array
+        stock_json_array.append(stock_json_object)
+
+    # Convert the list of JSON objects into a JSON array (string)
+    stock_json_array_str = json.dumps(stock_json_array, indent=4)
+
+    # Print or return the JSON array
+    print(stock_json_array_str)
         
 if __name__ == "__main__":
     main()
