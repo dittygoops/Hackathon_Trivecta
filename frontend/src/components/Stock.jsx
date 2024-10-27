@@ -1,9 +1,13 @@
-const Stock = ({ name, description, risk_score, growth_potential }) => (
-    <div className="stock">
-        <h2>{name}</h2>
-        <p>{description}</p>
-        <p>Risk Score: {risk_score}</p>
-        <p>Growth Potential: {growth_potential}</p>
+import './Stock.css';
+
+const Stock = ({ ticker, description, risk_score, growth_potential, isSelected, onClick }) => (
+    <div className={`stock ${isSelected ? 'selected' : ''}`} onClick={onClick}>
+        <div className='abc'>
+            <div>{ticker}</div>
+            <div>{risk_score}</div>
+            <div>{growth_potential}</div>
+        </div>
+        <div>{description}</div>
     </div>
 );
 
