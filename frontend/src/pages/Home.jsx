@@ -129,6 +129,30 @@ const Home = () => {
                   </div>
               </div>
           </div>
+
+          <div className="edu"><h3>Educational Resources</h3>
+          <h2>Finance Word of the Day: Volatility</h2>
+          <h4>Volatility often refers to the amount of uncertainty or risk related to the size of changes in a security’s value.
+
+A higher volatility means that a security’s value can potentially be spread out over a larger range of values. This means that the price of the security can move dramatically over a short time period in either direction. A lower volatility means that a security’s value does not fluctuate dramatically, and tends to be steadier.</h4>
+
+          <div className ="videoContainer">
+          <iframe src="https://www.youtube.com/embed/p7HKvqRI_Bo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ></iframe>
+          <h5> "Never invest in a business you can't understand"                       -Warren Buffet </h5>
+          <h5> </h5>
+          </div>
+
+          <div className ="videoContainer1">
+          <iframe src="https://www.youtube.com/embed/Tv4pkivGvdU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ></iframe>
+          <h5>“ETFs are a ground-breaking, innovative way to invest” – Matt Hougan</h5>
+          </div>
+
+          
+          </div>
+          
+          <div>
+           
+          </div>
       </div>
   );
 };
