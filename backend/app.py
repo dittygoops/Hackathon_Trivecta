@@ -1,5 +1,6 @@
 # import the Flask class from the flask module
 from flask import Flask, request, jsonify
+import flask_cors
 import llm_search.stock_search as stock_search
 import json
 

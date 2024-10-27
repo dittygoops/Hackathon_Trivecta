@@ -1,5 +1,5 @@
-import { query } from 'firebase/firestore';
 import { useState } from 'react';
+import axios from 'axios';
 
 import './StockQuerySubmission.css';
 
@@ -9,6 +9,12 @@ const StockQuerySubmission = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         console.log("Query submitted:", queryInput);
+        try {
+            const response = await axios.post('/search', { query: queryInput });
+            console.log("Response data:", response.data);
+        } catch (error) {
+            console.error("Error fetching data:", error);
+        }
     };
     
     return (
