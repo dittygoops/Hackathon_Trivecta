@@ -16,6 +16,7 @@ const IndexBuilder = () => {
   const [moneyInput, setMoneyInput] = useState(0);
   const [key, setKey] = useContext(KeyContext);
   const [tradeResponse, setTradeResponse] = useState([]); 
+  const [waitingForResponse, setWaitingForResponse] = useState(false);
 
   function reset() {
     setStocks([]);
@@ -27,6 +28,7 @@ const IndexBuilder = () => {
   }
 
   const handleTradeClick = async () => {
+    setWaitingForResponse(true);
     const tickers = selectedStocks.map(stock => stock.ticker);
     const tradeData = {
       tickers,
@@ -38,7 +40,7 @@ const IndexBuilder = () => {
     console.log(JSON.stringify(tradeData));
 
     try {
-      const response = await fetch('http://localhost:5000/submit_query', {
+      const response = await fetch('https://abhavea.pythonanywhere.com/submit_query', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -56,6 +58,7 @@ const IndexBuilder = () => {
       console.error('Error:', error);
       setTradeResponse('Trade failed');
     }
+    setWaitingForResponse(false);
   };
 
   return (
@@ -66,7 +69,6 @@ const IndexBuilder = () => {
           <div className="left-side">
             <StockQuerySubmission reset={reset} handleStocksUpdate={handleStocksUpdate}/>
             <StockList stocks={stocks}/>
-            <button className={`build-etf-button ${stocks.length == 0 ? 'invisible' : ''}`}>Build Index</button>
           </div>
           
           <div className="right-side">
@@ -78,7 +80,7 @@ const IndexBuilder = () => {
               value={moneyInput}
               onChange={(e) => setMoneyInput(e.target.value)}
             /> 
-            <button className={`invest-button ${selectedStocks.length == 0 ? 'invisible' : ''}`} onClick={handleTradeClick} disabled={Number(moneyInput) == 0}>Invest</button>
+            <button className={`invest-button ${selectedStocks.length == 0 ? 'invisible' : ''}`} onClick={handleTradeClick} disabled={Number(moneyInput) == 0 || waitingForResponse}>{waitingForResponse ? "Loading" : "Invest"}</button>
             <Summary data={tradeResponse}/>
           </div>
         </div>

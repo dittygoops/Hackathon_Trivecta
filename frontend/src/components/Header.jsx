@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../App';
 import SignInButton from './SignInButton';
 import SignOutButton from './SignOutButton';
-// import Icon from '/src/assets/icon.svg';
+import Icon from '../assets/icon.svg';
 
 import './Header.css';
 
@@ -36,7 +36,7 @@ const Header = () => {
         return (
             <div className='header-container'>
                 <div className='site-name' onClick={() => handleHeaderClick(0)}>
-                    <img className='icon' src="/src/assets/icon.svg"/>
+                    <img className='icon' src={Icon}/>
                     <div className='name-text'>
                         Trivecta
                     </div>
@@ -54,7 +54,7 @@ const Header = () => {
     return (
         <div className='header-container'>
             <div className='site-name'>
-                    <img className='icon' src="/src/assets/icon.svg"/>
+                    <img className='icon' src={Icon}/>
                     <div className='name-text'>
                         Trivecta
                     </div>

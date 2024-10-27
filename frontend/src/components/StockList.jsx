@@ -20,7 +20,15 @@ const StockList = ({ stocks }) => {
     };
 
     return (
-        <div className="stock-list">
+        <div className={`stock-list ${stocks.length == 0 ? 'invisible' : ''}`}>
+            <Stock 
+                ticker="Ticker"
+                description="Description"
+                risk_score="Risk Score"
+                growth_potential="Growth Potential"
+                isSelected={false}
+                onClick={() => {}}
+            />
             {stocks.map((stock, index) => (
                 <Stock
                     key={index}
