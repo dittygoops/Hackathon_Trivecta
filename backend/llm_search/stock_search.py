@@ -1,6 +1,8 @@
 from openai import OpenAI
 import os
 from dotenv import load_dotenv
+from algo import fin_val
+
 
 def get_llm_response(input):
     """Get stock recommendations from LLM"""
@@ -19,7 +21,7 @@ def get_llm_response(input):
         },
         {
             "role": "user",
-            "content": "Top 20 companies related to {input}"
+            "content": "Top 20 companies related to oil within the US stock market and are being actively traded"
         }
     ]
     
@@ -48,15 +50,27 @@ def extract_tickers(text):
 
 def main():
     # Get response from LLM
-    llm_output = get_llm_response("technology")
+    llm_output = get_llm_response("oil")
+    print(llm_output)
 
-    # Extract tickers
-    tickers = extract_tickers(llm_output)
+    # # Extract tickers
+    # tickers = extract_tickers(llm_output)
+    # print(tickers)
     
-    # Example of looping over tickers
-    for ticker in tickers:
-        print(f"Processing ticker: {ticker}")
-        # Add your ticker processing logic here
+    # # Example of looping over tickers
+    # for ticker in tickers:
+    #     print(f"Processing ticker: {ticker}")
+    #     # Add your ticker processing logic here
+    #     values_instance = fin_val.Values(ticker)  # Replace with actual values if needed
+    #     # Call the getValuation method
+    #     try:
+    #         valuation = round(values_instance.getValuation(ticker=ticker),2)
+    #         print(valuation)
+    #         risk_val = values_instance.getRiskScore(ticker=ticker)
+    #         print(risk_val)
+    #     except Exception as e:
+    #         print(f"Error processing ticker {ticker}: {e}")
+
         
 if __name__ == "__main__":
     main()
