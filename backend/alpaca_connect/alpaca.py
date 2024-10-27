@@ -10,6 +10,13 @@ class StockOrder:
 
     def __repr__(self):
         return f"StockOrder(ticker={self.ticker}, price={self.price}, quantity={self.quantity})"
+    
+    def to_dict(self):
+        return {
+            "ticker": self.ticker,
+            "price": self.price,
+            "quantity": self.quantity
+        }
 
 
 def buy_order_alpaca(API_KEY, API_SECRET, stock_order):
