@@ -1,0 +1,30 @@
+.stock {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    cursor: pointer; /* Change cursor to indicate clickable item */
+    transition: background-color 0.3s ease;
+}
+
+.stock:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Light hover effect */
+}
+
+.stock.selected {
+    background-color: #4CAF50; /* Change this to your preferred selected color */
+    color: white; /* Change text color when selected */
+    border: 1px solid #388E3C; /* Optional: border color for selected state */
+}
+
+.abc {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}

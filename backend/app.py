@@ -1,11 +1,12 @@
 # import the Flask class from the flask module
 from flask import Flask, request, jsonify
-import flask_cors
+from flask_cors import CORS
 import llm_search.stock_search as stock_search
 import json
 
 # create the application object
 app = Flask(__name__)
+CORS(app)
 
 # use decorators to link the function to a url
 @app.route('/')

@@ -1,0 +1,128 @@
+[
+    {
+        "ticker": "XOM",
+        "description": "Exxon Mobil Corporation, a leading integrated oil supermajor.",
+        "growth_potential": 266.85,
+        "risk_score": -1.91
+    },
+    {
+        "ticker": "CVX",
+        "description": "Chevron Corporation, an oil supermajor with upstream, midstream, and downstream operations.",
+        "growth_potential": 410.88,
+        "risk_score": 11.41
+    },
+    {
+        "ticker": "COP",
+        "description": "ConocoPhillips, an integrated oil company.",
+        "growth_potential": 332.87,
+        "risk_score": -0.52
+    },
+    {
+        "ticker": "EOG",
+        "description": "EOG Resources, an exploration and production company with assets concentrated in the United States.",
+        "growth_potential": 205.31,
+        "risk_score": 2.29
+    },
+    {
+        "ticker": "KMI",
+        "description": "Kinder Morgan Inc, an energy infrastructure company operating pipelines and terminals.",
+        "growth_potential": 29.79,
+        "risk_score": 6.18
+    },
+    {
+        "ticker": "PSX",
+        "description": "Phillips 66, a diversified energy manufacturing and logistics company.",
+        "growth_potential": 18.93,
+        "risk_score": 4.97
+    },
+    {
+        "ticker": "OKE",
+        "description": "ONEOK Inc, a company involved in natural gas and natural gas liquids.",
+        "growth_potential": 66.21,
+        "risk_score": 5.56
+    },
+    {
+        "ticker": "WMB",
+        "description": "The Williams Companies, Inc., a company involved in natural gas transportation and processing.",
+        "growth_potential": 30.58,
+        "risk_score": 1.49
+    },
+    {
+        "ticker": "FANG",
+        "description": "Diamondback Energy Inc, an exploration and production company.",
+        "growth_potential": 78.58,
+        "risk_score": 3.15
+    },
+    {
+        "ticker": "SLB",
+        "description": "Schlumberger Limited, the world\u2019s largest oilfield services provider.",
+        "growth_potential": 350.56,
+        "risk_score": 6.84
+    },
+    {
+        "ticker": "ET",
+        "description": "Energy Transfer LP, a company operating energy infrastructure including pipelines.",
+        "growth_potential": 407.35,
+        "risk_score": 5.01
+    },
+    {
+        "ticker": "MPC",
+        "description": "Marathon Petroleum Corporation, a refining and marketing company.",
+        "growth_potential": 15.09,
+        "risk_score": -0.7
+    },
+    {
+        "ticker": "OXY",
+        "description": "Occidental Petroleum Corporation, an exploration and production company.",
+        "growth_potential": 191.8,
+        "risk_score": 2.69
+    },
+    {
+        "ticker": "SHEL",
+        "description": "Shell plc, a multinational oil and gas company.",
+        "growth_potential": 627.16,
+        "risk_score": 3.62
+    },
+    {
+        "ticker": "TTE",
+        "description": "TotalEnergies SE, a multinational integrated oil and gas company.",
+        "growth_potential": 614.52,
+        "risk_score": -0.41
+    },
+    {
+        "ticker": "EPD",
+        "description": "Enterprise Products Partners L.P., a midstream energy company.",
+        "growth_potential": 298.07,
+        "risk_score": -0.53
+    },
+    {
+        "ticker": "TRGP",
+        "description": "Targa Resources Corp, a midstream energy company.",
+        "growth_potential": 24.31,
+        "risk_score": 1.75
+    },
+    {
+        "ticker": "VLO",
+        "description": "Valero Energy Corporation, a refining and marketing company.",
+        "growth_potential": 21.21,
+        "risk_score": 3.84
+    },
+    {
+        "ticker": "MPLX",
+        "description": "MPLX LP, a midstream energy company.",
+        "growth_potential": 45.84,
+        "risk_score": 0.04
+    },
+    {
+        "ticker": "TRP",
+        "description": "TC Energy Corporation, a company involved in natural gas and oil pipelines.",
+        "growth_potential": 114.6,
+        "risk_score": 10.0
+    },
+    {
+        "ticker": "SU",
+        "description": "Suncor Energy Inc, an integrated energy company.",
+        "growth_potential": 842.83,
+        "risk_score": 3.81
+    }
+]
