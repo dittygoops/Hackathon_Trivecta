@@ -38,14 +38,37 @@ h1 {
     color: #ffffff; /* Ensure the heading is white */
     text-align: center; /* Center the heading */
     font-size: 3.5em; /* Increase the font size */
-    margin: 20px 0; /* Optional: Add some vertical space */
+    margin: 10px 0; /* Optional: Add some vertical space */
 }
 
 
 h2 {
     color: #ffffff; /* Ensure all headings are white */
+    font-size: 2.25em;
+    text-align: center;
 }
 
+h3 {
+    color: #ffffff; /* Ensure the heading is white */
+    text-align: center; /* Center the heading */
+    font-size: 3.5em; /* Increase the font size */
+    margin: 50px 0; /* Optional: Add some vertical space */
+}
+
+h4 {
+    color: #FFC107; /* Ensure the heading is white */
+    text-align: left; /* Center the heading */
+    font-size: 1.75em; /* Increase the font size */
+    
+}
+
+h5 {
+    padding: 20px;
+    color: #FFC107; /* Ensure the heading is white */
+    text-align: center; /* Center the heading */
+    font-size: 1.75em; /* Increase the font size */
+    
+}
 /* Profit box styling */
 .profit-box {
     margin-top: 0px; /* Space above the box */
@@ -105,4 +128,23 @@ a {
 
 a:hover {
     text-decoration: underline; /* Add underline on hover */
+}
+
+.edu{
+    border: 2px solid lightgray;
+    padding: 30px;
+}
+
+.videoContainer{
+    padding: 50px;
+    display: flex;
+    width: 100%;
+    height: 500px;
+}
+
+.videoContainer1{
+    padding: 50px;
+    display: flex;
+    width: 100%;
+    height: 500px;
 }
