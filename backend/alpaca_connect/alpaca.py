@@ -2,11 +2,6 @@ import yfinance as yf
 import requests
 
 
-
-
-API_KEY = 'PKVLWEIPPRBF8JFPLIPF'
-API_SECRET = 'Tv3DjijqITUvukYS0rGiXX7wSxtY3wcdZLUZd9c5'
-
 def buy_order_alpaca(ticker, price, quantity):
     
     url = 'https://paper-api.alpaca.markets/v2/orders'
