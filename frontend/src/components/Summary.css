@@ -1,0 +1,38 @@
+/* Summary.css */
+
+.summary-container {
+    background-color: #2c2c2c; /* Dark background */
+    color: #e0e0e0; /* Light text color */
+    padding: 20px;
+    border-radius: 8px; /* Rounded corners */
+    max-height: 15vh; /* Maximum height for the container */
+    width: 60%; /* Full width */
+    overflow-y: auto; /* Enable vertical scrolling */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+.summary-item {
+    display: flex; /* Flexbox for row layout */
+    justify-content: space-between; /* Space between items */
+    padding: 10px;
+    border-bottom: 1px solid #444; /* Divider between rows */
+}
+
+/* Custom scrollbar styles */
+.summary-container::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+}
+
+.summary-container::-webkit-scrollbar-track {
+    background: #434343; /* Darker background for the track */
+    border-radius: 6px; /* Rounded edges for the track */
+}
+
+.summary-container::-webkit-scrollbar-thumb {
+    background: #282828; /* Color of the scrollbar thumb */
+    border-radius: 6px; /* Rounded edges for the thumb */
+}
+
+.summary-container::-webkit-scrollbar-thumb:hover {
+    background: #303030; /* Slightly darker color on hover */
+}

@@ -26,8 +26,8 @@ const StockList = ({ stocks }) => {
                     key={index}
                     ticker={stock.ticker}
                     description={stock.description}
-                    risk_score={stock.risk_score}
-                    growth_potential={stock.growth_potential}
+                    risk_score={stock.risk_score + "%"}
+                    growth_potential={stock.growth_potential + "%"}
                     isSelected={selectedStocks.includes(stocks[index])} // Check if stock is selected
                     onClick={() => handleStockClick(index)} // Handle click
                 />
