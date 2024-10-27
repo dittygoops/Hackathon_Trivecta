@@ -27,10 +27,26 @@ const Learn = () => {
     setInputValue('');
 
     // need output from backend
-    await new Promise(r => setTimeout(r, 2000));
-    const newMessage = <Message text={text} role="bot" />;
+    try {
+      const response = await fetch('http://127.0.0.1:5000/query-llm', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ query: text }),
+      });
 
-    setMessages((prevMessages) => [...prevMessages, newMessage]);
+      if (!response.ok) {
+          throw new Error('Network response was not ok');
+      }
+
+      const data = await response.json();
+      const newMessage = <Message text={data.response} role="bot" />;
+
+      setMessages((prevMessages) => [...prevMessages, newMessage]);
+  } catch (error) {
+      console.error("Error fetching data:", error);
+  }
     setWaitingForResponse(false);
   };
 
