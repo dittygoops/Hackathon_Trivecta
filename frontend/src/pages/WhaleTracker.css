@@ -1,0 +1,30 @@
+.whale-tracker {
+    background-color: black;
+    color: white;
+    padding: 20px;
+}
+
+.donut-chart-container {
+    width: 100%;
+    height: 400px;
+    margin: 20px 0;
+}
+
+.investors-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.investor-column {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid gold;
+    margin: 0 10px;
+}
+
+.congressional-trades {
+    margin-top: 20px;
+    border: 1px solid gold;
+    padding: 10px;
+}
