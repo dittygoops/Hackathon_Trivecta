@@ -8,6 +8,7 @@ import './KeySubmission.css';
 
 const KeySubmission = () => {
     const [keyInput, setKeyInput] = useState('');
+    const [secretInput, setSecretInput] = useState('');
     const [key, setKey] = useContext(KeyContext);
     const [user, setUser] = useContext(AuthContext);
     const navigate = useNavigate();
@@ -19,8 +20,8 @@ const KeySubmission = () => {
         if (user) {
             const userRef = doc(db, "users", user.uid);
             try {
-              await setDoc(userRef, { alpacaKey: keyInput }, { merge: true }); // Write the alpacaKey to Firestore
-              setKey(keyInput); // Update the key state variable
+              await setDoc(userRef, { alpacaKey: keyInput, alpacaSecret: secretInput }, { merge: true }); // Write the alpacaKey to Firestore
+              setKey([keyInput, secretInput]); // Update the key state variable
               navigate("/"); // Redirect to the home page
             } catch (error) {
               console.error("Error writing alpacaKey to Firestore:", error);
@@ -36,7 +37,7 @@ const KeySubmission = () => {
                 Alpaca Key Submission
             </div>
             <div className="key-form-description"> 
-                We use Alpaca as a service to complete trades for you. Please enter your Alpaca API key below.
+                We use Alpaca as a service to complete trades for you. Please enter your Alpaca API key and API secret below.
             </div>
             <div className="key-form">
                 <form onSubmit={handleSubmit}>  
@@ -46,7 +47,13 @@ const KeySubmission = () => {
                         value={keyInput}
                         onChange={(e) => setKeyInput(e.target.value)}
                     />
-                    <button type="submit" disabled={keyInput.length == 0}>Submit</button>
+                    <input
+                        type="text"
+                        placeholder="Enter your Alpaca secret key"
+                        value={secretInput}
+                        onChange={(e) => setSecretInput(e.target.value)}
+                    />
+                    <button type="submit" disabled={keyInput.length == 0 || secretInput.length == 0}>Submit</button>
                 </form>
              </div>
         </div> 

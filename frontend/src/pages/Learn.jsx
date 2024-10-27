@@ -26,9 +26,10 @@ const Learn = () => {
     setMessages((prevMessages) => [...prevMessages, <Message text={text} role="user" />]);
     setInputValue('');
 
+    // need output from backend
     await new Promise(r => setTimeout(r, 2000));
-
     const newMessage = <Message text={text} role="bot" />;
+
     setMessages((prevMessages) => [...prevMessages, newMessage]);
     setWaitingForResponse(false);
   };

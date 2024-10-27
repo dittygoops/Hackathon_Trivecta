@@ -1,4 +1,3 @@
-# from .vals import dcf
 from vals import dcf
 import yfinance as yf
 from vals import risk

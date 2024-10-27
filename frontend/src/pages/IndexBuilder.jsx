@@ -1,10 +1,24 @@
 import Header from "../components/Header";
 
+import StockQuerySubmission from "../components/StockQuerySubmission";
+import StockList from "../components/StockList";
+
+import './IndexBuilder.css';
+
 const IndexBuilder = () => {
     return (
-      <div>
+      <div className="page">
         <Header />
-        <h1>IndexBuilder</h1>
+        <div className="page-content">
+          <div className="left-side">
+            <StockQuerySubmission />
+            <StockList stocks={[]} />
+          </div>
+          
+          <div className="right-side">
+            selected stocks
+          </div>
+        </div>
       </div>
     );
   }
