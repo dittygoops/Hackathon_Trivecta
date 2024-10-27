@@ -28,7 +28,7 @@ const Learn = () => {
 
     // need output from backend
     try {
-      const response = await fetch('http://127.0.0.1:5000/query-llm', {
+      const response = await fetch('https://abhavea.pythonanywhere.com/query-llm', {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json',
