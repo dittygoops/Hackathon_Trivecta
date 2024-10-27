@@ -2,7 +2,7 @@ from typing import List, Dict, Optional
 from openai import OpenAI
 import os
 from dotenv import load_dotenv
-from algo import fin_val
+from .algo import fin_val
 import re
 import json
 from concurrent.futures import ThreadPoolExecutor
@@ -120,7 +120,7 @@ class StockDataProcessor:
             
             # Filter out None values from failed processing
             valid_results = [r for r in results if r is not None]
-
+            
             return json.dumps(valid_results, indent=4)
             
         except Exception as e:
