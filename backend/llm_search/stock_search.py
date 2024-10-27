@@ -1,20 +1,10 @@
 from openai import OpenAI
 import os
 from dotenv import load_dotenv
-from typing import List, Dict, Tuple
-import sys
-from pathlib import Path
+from algo import fin_val
 
-# Get the absolute path to the backend directory
-current_dir = Path(__file__).resolve().parent
-backend_dir = current_dir.parent
-sys.path.append(str(backend_dir))
 
-# Now import the algo module
-import algo.fin_val as fin_val
-
-# Rest of your code remains the same...
-def get_llm_response(input_sector: str) -> str:
+def get_llm_response(input):
     """Get stock recommendations from LLM"""
     load_dotenv()
     api_key = os.getenv('PERPLEXITY_API_KEY')
@@ -31,7 +21,7 @@ def get_llm_response(input_sector: str) -> str:
         },
         {
             "role": "user",
-            "content": f"Top 50 companies related to {input_sector}. Format each line as: **TICKER** - Description"
+            "content": "Top 20 companies related to oil within the US stock market and are being actively traded"
         }
     ]
     
@@ -75,13 +65,28 @@ def extract_stock_info(text: str) -> List[Dict[str, str]]:
     return stocks
 
 def main():
-    sector = "technology"
-    llm_output = get_llm_response(sector)
-    stocks = extract_stock_info(llm_output)
-        
-    for stock in stocks:
-        ticker = stock['ticker']
-        val = fin_val.valuation_vals(ticker)
+    # Get response from LLM
+    llm_output = get_llm_response("oil")
+    print(llm_output)
+
+    # # Extract tickers
+    # tickers = extract_tickers(llm_output)
+    # print(tickers)
+    
+    # # Example of looping over tickers
+    # for ticker in tickers:
+    #     print(f"Processing ticker: {ticker}")
+    #     # Add your ticker processing logic here
+    #     values_instance = fin_val.Values(ticker)  # Replace with actual values if needed
+    #     # Call the getValuation method
+    #     try:
+    #         valuation = round(values_instance.getValuation(ticker=ticker),2)
+    #         print(valuation)
+    #         risk_val = values_instance.getRiskScore(ticker=ticker)
+    #         print(risk_val)
+    #     except Exception as e:
+    #         print(f"Error processing ticker {ticker}: {e}")
+
         
 if __name__ == "__main__":
     main()
