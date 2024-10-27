@@ -8,6 +8,78 @@ import { useNavigate } from 'react-router-dom'
 // Register Chart.js components
 ChartJS.register(LinearScale, CategoryScale, PointElement, LineElement, Filler, Tooltip, Legend);
 
+const educationalModules = [
+  {
+      title: "Module 1: Basic Finance",
+      image: "https://i3.ytimg.com/vi/Mcl0vIP-FEU/maxresdefault.jpg",
+      link: "https://www.youtube.com/watch?v=Mcl0vIP-FEU",
+  },
+  {
+      title: "Module 2: Introduction to Accounting",
+      image: "https://i3.ytimg.com/vi/Hk5XaWk4mhE/maxresdefault.jpg",
+      link: "https://www.youtube.com/watch?v=Hk5XaWk4mhE",
+  },
+  {
+      title: "Module 3: Investment Basics",
+      image: "https://i3.ytimg.com/vi/qIw-yFC-HNU/maxresdefault.jpg",
+      link: "https://www.youtube.com/watch?v=qIw-yFC-HNU",
+  },
+  {
+      title: "Module 4: Understanding Risk",
+      image: "https://i3.ytimg.com/vi/TETSZeSoAlk/maxresdefault.jpg",
+      link: "https://www.youtube.com/watch?v=TETSZeSoAlk",
+  },
+  {
+      title: "Module 5: Financial Statements",
+      image: "https://i3.ytimg.com/vi/_F6a0ddbjtI/maxresdefault.jpg",
+      link: "https://www.youtube.com/watch?v=_F6a0ddbjtI",
+  },
+  {
+      title: "Module 6: Types of Investments",
+      image: "https://i3.ytimg.com/vi/K-ZgDhdLwA4/maxresdefault.jpg",
+      link: "https://www.youtube.com/watch?v=K-ZgDhdLwA4",
+  },
+  {
+      title: "Module 7: Risk vs. Reward",
+      image: "https://i3.ytimg.com/vi/oeH44hKuRNA/maxresdefault.jpg",
+      link: "https://www.youtube.com/watch?v=oeH44hKuRNA",
+  },
+  {
+      title: "Module 8: Market Trends",
+      image: "https://i3.ytimg.com/vi/J-ntsk7Dsd0/maxresdefault.jpg",
+      link: "https://www.youtube.com/watch?v=J-ntsk7Dsd0",
+  },
+  {
+      title: "Module 9: Valuation Techniques",
+      image: "https://i3.ytimg.com/vi/ZQ8wODESzhs/maxresdefault.jpg",
+      link: "https://www.youtube.com/watch?v=ZQ8wODESzhs",
+  },
+  {
+      title: "Module 10: Personal Finance Tips",
+      image: "https://i3.ytimg.com/vi/Izw-xaVkO0g/maxresdefault.jpg",
+      link: "https://www.youtube.com/watch?v=Izw-xaVkO0g",
+  },
+];
+
+// Function to render video boxes recursively
+const renderModules = (modules) => {
+  return (
+      <div className="modules-container">
+          {modules.map((module, index) => (
+              <div className="module-box" key={index}>
+                  <img src={module.image} alt={module.title} className="module-image" />
+                  <h4 className="module-title">{module.title}</h4>
+                  <a href={module.link} target="_blank" rel="noopener noreferrer" className="module-link">
+                      Watch Video
+                  </a>
+              </div>
+          ))}
+      </div>
+  );
+};
+
+
+
 const Home = () => {
     // State for Portfolio Overview
     const [portfolioBalance] = useState(100000.00); // Example balance
@@ -171,29 +243,8 @@ const Home = () => {
             </div>
         </div>
 
-        <div className="edu">
-            <h3>Educational Resources</h3>
-            <h2>Finance Word of the Day: Volatility</h2>
-            <h4>
-                Volatility often refers to the amount of uncertainty or risk related to the size of changes in a security’s value.
-                A higher volatility means that a security’s value can potentially be spread out over a larger range of values. 
-                This means that the price of the security can move dramatically over a short time period in either direction. 
-                A lower volatility means that a security’s value does not fluctuate dramatically, and tends to be steadier.
-            </h4>
-
-            <div className="videoContainer">
-                <iframe src="https://www.youtube.com/embed/p7HKvqRI_Bo" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
-                <h5> "Never invest in a business you can't understand" - Warren Buffet </h5>
-            </div>
-
-            <div className="videoContainer1">
-                <iframe src="https://www.youtube.com/embed/Tv4pkivGvdU" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
-                <h5>“ETFs are a ground-breaking, innovative way to invest” – Matt Hougan</h5>
-            </div>
-        </div>
-
         <div className="market">
-            <h3>Market Overview</h3>
+            <h3>Market News</h3>
             <div className="articles-container">
                 {mockArticles.map((article, index) => (
                     <div className="article-box" key={index}>
@@ -213,7 +264,33 @@ const Home = () => {
             </button>
             </div>
         </div>
-    </div>
+
+        <div className="edu">
+                <h3>Educational Resources</h3>
+                <h2>Finance Word of the Day: Volatility</h2>
+                <h4>
+                    Volatility often refers to the amount of uncertainty or risk related to the size of changes in a security’s value.
+                    A higher volatility means that a security’s value can potentially be spread out over a larger range of values. 
+                    This means that the price of the security can move dramatically over a short time period in either direction. 
+                    A lower volatility means that a security’s value does not fluctuate dramatically and tends to be steadier.
+                </h4>
+
+                <div className="videoContainer">
+                    <iframe src="https://www.youtube.com/embed/p7HKvqRI_Bo" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                    <h5> "Never invest in a business you can't understand" - Warren Buffet </h5>
+                </div>
+
+                <div className="videoContainer1">
+                    <iframe src="https://www.youtube.com/embed/Tv4pkivGvdU" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                    <h5>“ETFs are a ground-breaking, innovative way to invest” – Matt Hougan</h5>
+                </div>
+            </div>
+
+            <div className="educational-modules">
+                <h3>Educational Modules</h3>
+                {renderModules(educationalModules)} {/* Render all educational modules */}
+            </div>
+        </div>
 );
 };
 

@@ -63,10 +63,18 @@ h4 {
 }
 
 h5 {
-    padding: 20px;
+    padding: 100px;
     color: #ffffff;; /* Ensure the heading is white */
     text-align: center; /* Center the heading */
     font-size: 1.75em; /* Increase the font size */
+    
+}
+
+h6 {
+    padding: 20px;
+    color: #ffffff;; /* Ensure the heading is white */
+    text-align: center; /* Center the heading */
+    font-size: 1.5em; /* Increase the font size */
     
 }
 /* Profit box styling */
@@ -215,4 +223,48 @@ a:hover {
 
 .learn-more-button:hover {
     background-color: #0056b3; /* Darker shade on hover */
+}
+
+.learning-pathway {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.modules-container {
+    display: flex;                      /* Use flexbox for layout */
+    flex-wrap: wrap;                   /* Allow wrapping of items */
+    justify-content: space-around;      /* Evenly space out the modules */
+    margin: 20px 20;                    /* Space above and below */
+}
+
+.module-box {
+    background-color: black;           /* Black background for each module */
+    border: 2px solid gold;            /* Gold border for modules */
+    padding: 15px;                     /* Inner padding */
+    margin: 10px;                      /* Space around each module */
+    text-align: center;                /* Center the text */
+    width: calc(30% - 20px);          /* Width of module, accounting for margins */
+}
+
+.module-image {
+    width: 100%;                       /* Responsive image */
+    height: auto;                      /* Maintain aspect ratio */
+}
+
+.module-title {
+    color: white;                      /* White font for titles */
+    margin: 10px 0;                  /* Margin around titles */
+    text-align: center;
+}
+
+.module-link {
+    color: gold;                       /* Gold color for links */
+    text-decoration: none;             /* Remove underline */
+}
+
+.module-link:hover {
+    text-decoration: underline;        /* Underline on hover */
 }
