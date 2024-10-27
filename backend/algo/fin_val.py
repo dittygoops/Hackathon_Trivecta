@@ -24,9 +24,10 @@ class Values:
              perGrowth = perGrowth/1.65
 
 
-        if perGrowth < 10 and perGrowth > 0:
+        if perGrowth < 6.5 and perGrowth > 0:
             perGrowth = perGrowth * 85
 
+        
 
         return perGrowth
     
