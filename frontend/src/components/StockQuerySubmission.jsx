@@ -11,7 +11,7 @@ const StockQuerySubmission = ({reset, handleStocksUpdate}) => {
         reset();
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:5000/search', {
+            const response = await fetch('https://abhavea.pythonanywhere.com/search', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

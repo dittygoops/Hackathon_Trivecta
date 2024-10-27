@@ -48,8 +48,8 @@
     background-color: #FFA000; /* Darker hover blue */
 }
 
-.invest-button {
-    width: 50%;
+.build-etf-button:disabled, .invest-button:disabled {
+    background-color: #8B5B29; /* Darker hover blue */
 }
 
 /* IndexBuilder.css */
