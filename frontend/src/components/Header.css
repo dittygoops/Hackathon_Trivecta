@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'Tesla';
+    src: url('../assets/TESLA.ttf') format('truetype'); /* Adjust the path based on your folder structure */
+    font-weight: normal;
+    font-style: normal;
+}
+
 .header-container {
     display: flex;
     align-items: center;
@@ -9,6 +16,7 @@
     font-size: 1.5rem;
     font-weight: bold;
     color: #e0e0e0; /* Light text color */
+    font-family: 'Tesla', sans-serif;
     text-transform: uppercase; 
     letter-spacing: 0.05rem;
     margin: 0 100px 0 0;

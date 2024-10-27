@@ -33,20 +33,36 @@ def get_llm_response(input):
     
     return response.choices[0].message.content
 
-def extract_tickers(text):
-    """Extract just the ticker symbols from the text"""
-    tickers = []
+def extract_stock_info(text: str) -> List[Dict[str, str]]:
+    stocks = []
     lines = text.split('\n')
     
     for line in lines:
-        if '**' in line:
-            start = line.find('**') + 2
-            end = line.find('**', start)
-            if start != -1 and end != -1:
-                ticker = line[start:end].strip()
-                tickers.append(ticker)
+        if not line.strip() or '**' not in line:
+            continue
+            
+        try:
+            ticker_start = line.find('**') + 2
+            ticker_end = line.find('**', ticker_start)
+            ticker = line[ticker_start:ticker_end].strip()
+
+            desc_parts = line.split('-', 1)
+            if len(desc_parts) > 1:
+                description = desc_parts[1].strip()
+            else:
+                description = ""
+                
+            stocks.append({
+                "ticker": ticker,
+                "description": description
+            })
+            
+        except Exception as e:
+            print(f"Error processing line: {line}")
+            print(f"Error: {str(e)}")
+            continue
     
-    return tickers
+    return stocks
 
 def main():
     # Get response from LLM

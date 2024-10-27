@@ -7,7 +7,7 @@ import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore"; // Fires
 import Home from './pages/Home';
 import SignIn from './pages/SignIn';
 import IndexBuilder from './pages/IndexBuilder';
-import Research from './pages/Research';
+import Learn from './pages/Learn';
 import WhaleTracker from './pages/WhaleTracker';
 import Keys from './pages/Keys';
 
@@ -72,9 +72,9 @@ const App = () => {
               ) : <Navigate to="/signin" replace />} 
             />
             <Route
-              path="/research"
+              path="/learn"
               element={user ? (
-                key ? <Research /> : <Navigate to="/keys" replace />
+                key ? <Learn /> : <Navigate to="/keys" replace />
               ) : <Navigate to="/signin" replace />}
             />
             <Route
