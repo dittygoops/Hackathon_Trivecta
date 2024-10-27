@@ -28,3 +28,5 @@ dist-ssr
 *.sln
 *.sw?
 backend/llm_search/__pycache__
+backend/alpaca_connect/__pycache__
+backend/llm_search/__init__.py
